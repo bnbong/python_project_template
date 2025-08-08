@@ -11,10 +11,12 @@ import src
 def test_version_format() -> None:
     """Test that version follows semantic versioning format."""
     version = src.__version__
-    
+
     # Check semantic versioning format (e.g., "0.1.0", "1.2.3", "2.0.0-alpha.1")
-    semver_pattern = r'^\d+\.\d+\.\d+(?:-[a-zA-Z0-9\-\.]+)?$'
-    assert re.match(semver_pattern, version), f"Version '{version}' does not follow semantic versioning"
+    semver_pattern = r"^\d+\.\d+\.\d+(?:-[a-zA-Z0-9\-\.]+)?$"
+    assert re.match(
+        semver_pattern, version
+    ), f"Version '{version}' does not follow semantic versioning"
 
 
 def test_version_is_string() -> None:
